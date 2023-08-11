@@ -40,7 +40,7 @@ Para tener un objetivo preciso del comportamiento de los datos se ha realizado l
     <img width="60%" src="image\etl.png">
 </p>
    
-- **EDA:** efectuado el proceso anterior , el proceso EDA precisa de estos datos para analizar , proponer supuestos o inferencias a partir de la descripcion estadistica , y extraer informacion .caracteristicas principales de los datos ,en variables numericas solo hay una variable que sigue una distribucion simetrica o normal, en variables categoricas en idioma original el mas frecuente es el ingles y ello se verifica en el barplot, en status es released,y  cinderella es la pelicula mas frecuente. en las variables numericas existen atipicos al realizar el tratamiento de los mismos .se llega a un conjunto de datos sin outliers. pero ello tiene implicancias en los resultados estadisticos de la variable numerica(p.ej. cambios en la popularidad de las peliculas) y finalmente se analiza el nivel de correlacion por cada par de variables
+- **EDA:** efectuado el proceso anterior , el proceso EDA precisa de estos datos para analizar , proponer supuestos o inferencias a partir de la descripcion estadistica , y extraer informacion .caracteristicas principales de los datos ,en variables numericas solo hay una variable que sigue una distribucion simetrica o normal, en variables categoricas en idioma original el ingles es el mas frecuente y ello se verifica en los diagramas, en status es released, y  cinderella es la pelicula mas frecuente. en las variables numericas existen datos atipicos . al realizar el tratamiento de los mismos .se llega a un conjunto de datos sin outliers. pero ello tiene implicancias en los resultados estadisticos de la variable numerica(p.ej. cambios en la popularidad de las peliculas) y finalmente se analiza el nivel de correlacion por cada par de variables
 
  <p align ="center" width="100%">
     <img width="60%" src="image\eda.png">
@@ -56,7 +56,7 @@ Para tener un objetivo preciso del comportamiento de los datos se ha realizado l
   - link de notebook ML : https://colab.research.google.com/drive/1P-Faq-dc2WKEyAVMIns-X0rcaifOz-2t?usp=sharing
   - link del deploy : https://proyecto01-qgmc.onrender.com/docs#/
 
-# paquetes_utilizadas
+# paquetes_utilizados
 
     - fastapi
     - pandas 
