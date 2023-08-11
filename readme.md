@@ -4,7 +4,7 @@
 
 
 
-<h1 align="center"> Analisis exploratorio y sistema de recomendacion en peliculas </h1>
+<h1 align="center"> Análisis exploratorio y sistema de recomendación en peliculas </h1>
 
 <p align ="center" width="100%">
     <img width="60%" src="image\descargar.png">
