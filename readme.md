@@ -2,115 +2,82 @@
 
 ## Proyecto Individual I
 
-### Descripcion,analisis y sistemas de recomendacion knn en films
-<br />
-<br />
-
-<br />
-
-### <strong>1. Identificación de problemas y formulación de objetivos</strong>.
-
-<br />
-   Un objetivo bien definido ayuda a determinar los datos requeridos, realizados por medio del ETL, EDA ,Y seleccionar los modelos de aprendizaje automático apropiados y evaluar el rendimiento del sistema de recomendación.
-   definir claramente el problema que resolverá el sistema de recomendación.
-<br />
 
 
-###  <strong>2. Recopilación y preprocesamiento de datos</strong>
+<h1 align="center"> Analisis exploratorio y sistema de recomendacion en peliculas </h1>
 
-<br />
+<p align ="center" width="100%">
+    <img width="60%" src="image\descargar.png">
+</p>
+
+*[Índice](#índice)
+
+*[Descripción del proyecto](#descripción_del_proyecto)
+
+*[Características de la aplicación y demostración](#Características_de_la_aplicación_y_demostración)
+
+*[Acceso al proyecto](#acceso_al_proyecto)
+
+*[Paquetes utilizadas](#paquetes_utilizados)
+
+*[Conclusión](#conclusión)
+
+*[Personas-Desarrolladores del Proyecto](#personas_desarrolladores)
+
+# descripción_del_proyecto
+
+Para tener un objetivo preciso del comportamiento de los datos se ha realizado la limpieza y exploracion de los mismos
+ primero se hizo el proceso de tranformacion sobre **los dataset movies y credits**  , la carga  de los datasets y luego el proceso del ETL finalmente el archivo esta lista para ser archivo fuente del **proceso EDA** el proceso de EDA precede al modelamiento, se formula supuestos o hipotesis . se realiza un descripcion estadistico sobre variables numericas y categoricas , se propone inferencias ,supuestos, las cuales son validadas con los diagramas de dispersion , barras, caja , histograma ,heatmap, etc. estas se detallan en el notebook.se analiza las correlaciones entre variables para  luego realizar el modelo que ejecute recomendaciones de peliculas similares a una al respecto.
 
 
-   El siguiente paso es recopilar datos sobre el comportamiento .
-   Después de la recopilación de datos, los  datos se preprocesan y analizan . Este paso implica limpiar los datos, eliminar duplicados y controlar los valores que faltan. Además,  de transforman estos datos en un formato adecuado para algoritmos de aprendizaje automático.
-<br />
-   algunas bibliotecas utilizados para el preprocesamiento de datos basadas en Python:
-<br />
-```pandas
-    numpy
-    literal_eval
-```
-<br />
 
-###  <strong>3. Análisis exploratorio de datos</strong>
-<br />
+# Características_de_la_aplicación_y_demostración
 
-    El análisis exploratorio de datos (EDA) ayuda a comprender la distribución de datos y las relaciones entre las variables que se pueden utilizar para generar mejores recomendaciones.
+-  **ETL:** se hace la carga de los datasets , vista previa de los mismos, se elimina fila duplicados o nulas , filas no relacionadas ,recuento de vacios y nulos, reemplazo de datos vacios o nulos  por 0 en el caso de columnas numericas ,columnas categoricas  con una cadena de texto "sin_dato" , y en las anidadas con diccionarios . se toma esa decicion puesto que en algunas columnas los datos nulos representa menos del 1 % de la columna,y se necesita realizar calculos con alguna de ellas, se modifica el tipo de dato por columna, se elimina algunas columnas no muy predominantes en el analisis descriptivo estadistico y modelamiento
+
+
+<p align ="center" width="100%">
+    <img width="60%" src="image\etl.png">
+</p>
    
-    por ejemplo ,puede visualzar el promedio de presupuesto y ganancia que se obtuvo por pelicula, una descripcion estadistica general  . la fecuencia mas alta en produccion de peliculas por pais es  estados unidos. la pelicula mas frecuente es cinderella.y el actor con mas participacion es Bless Flowers
+- **EDA:** efectuado el proceso anterior , el proceso EDA precisa de estos datos para analizar , proponer supuestos o inferencias a partir de la descripcion estadistica , y extraer informacion .caracteristicas principales de los datos ,en variables numericas solo hay una variable que sigue una distribucion simetrica o normal, en variables categoricas en idioma original el mas frecuente es el ingles y ello se verifica en el barplot, en status es released,y  cinderella es la pelicula mas frecuente. en las variables numericas existen atipicos al realizar el tratamiento de los mismos .se llega a un conjunto de datos sin outliers. pero ello tiene implicancias en los resultados estadisticos de la variable numerica(p.ej. cambios en la popularidad de las peliculas) y finalmente se analiza el nivel de correlacion por cada par de variables
 
-    - algunas bibliotecas  para llevar a cabo análisis de datos exploratorios:
-    
-```
-     matplotlib
-     seaborn
-     Pandas
-     wargnings
-```
-<br />
+ <p align ="center" width="100%">
+    <img width="60%" src="image\eda.png">
+</p>
 
-###  <strong>4. Ingeniería de características</strong>
-<br />
-   La ingeniería de características implica seleccionar las características más adecuadas para entrenar el modelo de aprendizaje automático. Este paso implica crear nuevas características o transformar las existentes para hacerlas más adecuadas para el sistema de recomendación.
+- **sistema de recomendacion** respecto al tipo de modelo a usar para recomendacion de peliculas , se ha utilizado el modelo KNN  , ademas se utilizo la funcion coseno de similitud, la similitud es muy alta cuando la distancia es poca , es decir cuando la distancia entre dos vectores tiende a 0 .las peliculas seran mas similares, las peliculas a relacionar, poseen genero y en este caso clasificaremos las películas según sus géneros. se crea la columna genres_bin que define vectores a los cuales se aplica funcion coseno de similitud
 
-   Por ejemplo, dentro de los datos de los movies, las características como genero , tagline o frase celebre asociada a la pelicula y vote_average  son más relevantes para crear un sistema de recomendación .
 
-   algunas bibliotecas  de Python para utilizados:
+# acceso_proyecto
+ 
+  - link de notebook ETL: https://colab.research.google.com/drive/1XfszVglinoqwGMzrbd8kbZvVsl0Nv3qW?usp=sharing
+  - link de notebook EDA : https://colab.research.google.com/drive/1BWuVdzdm7hrBuPtbIDKb6DiwP_d4ZkFN?usp=sharing
+  - link de notebook ML : https://colab.research.google.com/drive/1P-Faq-dc2WKEyAVMIns-X0rcaifOz-2t?usp=sharing
+  - link del deploy : https://proyecto01-qgmc.onrender.com/docs#/
 
-```Scikit-learn
-    matplotlib
-    WordCloud
-    scipy
-    pandas
-    numpy
-```
-<br />
-<br />
+# paquetes_utilizadas
 
-###  <strong>5. modelado</strong>
-<br />
-   El objetivo de la selección de modelos es elegir el mejor algoritmo de aprendizaje automático que pueda predecir con precisión  .
+    - fastapi
+    - pandas 
+    - matplotlib.pyplot 
+    - seaborn 
+    - numpy 
+    - uvicorn
+    - scipy
 
-   algoritmo :
+# conclusión
 
-   i. Filtrado basado en contenido
-        utiliza caracteristicas de un elemento  para recomendar elementos adicionales con propiedades similares
-<br />
+<br />al realizar el EDA en los datos llegamos a algunas conlusiones:<br />  
 
-###  <strong>6. Implementación del modelo </strong>
-<br />
-   KNN es un modelo perfecto y también una muy buena línea para el desarrollo de sistemas de recomendación. Utiliza una base de datos en la que los puntos de datos se separan en varios clústeres para hacer inferencias para nuevas muestras.se basa en la similitud de características de los elementos .KNN calculará la "distancia" entre la película de destino y cualquier otra película en su base de datos,luego clasifica sus distancias y devuelve las mejores películas de vecinos más cercanas .
-    
-    - se necesita los datos estén en una matriz
-    - Nuestro marco de datos de película es una matriz extremadamente dispersa
-    - usaremos la similitud del coseno para la búsqueda del vecino más cercano
-    
-<br />
-
-###  <strong>7. sistema de recomendacion </strong>
-<br />   
-   Después de preprocesar los datos y transformar el marco de datos de las clasificaciones en una matriz dispersa de características de película, necesitamos configurar nuestro modelo KNN con los hiperparámetros adecuados:
-
-```
-from sklearn.neighbors import NearestNeighbors
-model_knn = NearestNeighbors(metric='cosine', algorithm='brute', n_neighbors=5, n_jobs=-1)
-```
-  Finalmente podemos hacer algunas recomendaciones de películas .
-    
-
-###  <strong>8. conclusiones </strong>
-<br />  
-   al realizar el EDA en los datos llegamos a algunas conlusiones:<br />  
    - para algunas variables numericas se les define como una distribucion muy cercana a la normal
    - las variables que dependen de variables independientes . se les atribuira modificaciones de orden de    representacion en el tratamiento outliers
-   - Del heatmap se puede concluir que  hay variables fuertemente correlacionadas como budget y revenue en numericas y en categoricas title y tagline
+   - Del heatmap se puede concluir que  hay variables correlacionadas como budget y revenue en numericas y en categoricas title y genres
+   -  se puede concluir que la imputacion de outliers tiene un efecto significativo en la variable popularidad de las peliculas (constante en los 8 primeros ) 
+   - la funcion del coseno de similitud influye en el modelo de ML y en la recomendacion de films en este caso se creo una columna con listas de elementos binarios para aplicar la funcion, genres_bin.
 
 <br />  
 
-### <strong>enlace del deploy consultas </strong>
+# personas_desarrolladores
 
-
-
- ### <strong>enlaces recomendados </strong>    
-<br /> 
-https://towardsdatascience.com/prototyping-a-recommender-system-step-by-step-part-1-knn-item-based-collaborative-filtering-637969614ea
+ - Yesica Milagros Leon Ccahuana
