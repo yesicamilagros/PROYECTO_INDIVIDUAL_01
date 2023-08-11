@@ -55,7 +55,7 @@ Para tener un objetivo preciso del comportamiento de los datos se ha realizado l
   - link de notebook ML : https://colab.research.google.com/drive/1P-Faq-dc2WKEyAVMIns-X0rcaifOz-2t?usp=sharing
   - link del deploy : https://proyecto01-qgmc.onrender.com/docs#/
   - link video : https://youtu.be/YxMwd9h9kkQ hay problemas de audio con el link del video anterior ,asi que prepare otro video 
-    con el audio mas nitido : https://meeting.zoho.com/meeting/public/videoprv?recordingId=c5323fa4607bbcb7a5f1cd47b7d9c1a8146f3a2f665958f01f7a39f6e74a20e2
+    : https://meeting.zoho.com/meeting/public/videoprv?recordingId=c5323fa4607bbcb7a5f1cd47b7d9c1a8146f3a2f665958f01f7a39f6e74a20e2
   
 
 # paquetes_utilizados
