@@ -54,6 +54,7 @@ Para tener un objetivo preciso del comportamiento de los datos se ha realizado l
   - link de notebook EDA : https://colab.research.google.com/drive/1BWuVdzdm7hrBuPtbIDKb6DiwP_d4ZkFN?usp=sharing
   - link de notebook ML : https://colab.research.google.com/drive/1P-Faq-dc2WKEyAVMIns-X0rcaifOz-2t?usp=sharing
   - link del deploy : https://proyecto01-qgmc.onrender.com/docs#/
+  - link video : https://youtu.be/YxMwd9h9kkQ
 
 # paquetes_utilizados
 
