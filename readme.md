@@ -3,7 +3,6 @@
 ## Proyecto Individual I
 
 
-
 <h1 align="center"> Análisis exploratorio y sistema de recomendación en peliculas  </h1>
 
 <p align ="center" width="100%">
